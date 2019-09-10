@@ -64,6 +64,7 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 gem 'popper_js', '~> 1.14', '>= 1.14.5'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
+gem 'simple_form'
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'
