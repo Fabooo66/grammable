@@ -7,7 +7,7 @@ RSpec.describe GramsController, type: :controller do
       user = FactoryBot.create(:user)
       sign_in user
       delete :destroy, params: { id: gram.id }
-      expect(response).to have_http_status(forbidden)
+      expect(response).to have_http_status(403)
     end
 
     it "shouldn't let unauthenticated users destroy a gram" do
@@ -28,8 +28,8 @@ RSpec.describe GramsController, type: :controller do
     it "should return a 404 message if we cannot find a gram with the id that is specified" do
       user = FactoryBot.create(:user)
       sign_in user
-      delete :destory, params: {id: 'SPACEDUCK'}
-      expect(response).to have_http_status(:not_found)
+      delete :destroy, params: {id: 'SPACEDUCK'}
+      expect(response).to have_http_status(404)
     end
   end
 
@@ -39,7 +39,7 @@ RSpec.describe GramsController, type: :controller do
       user = FactoryBot.create(:user)
       sign_in user
       patch :update, params: {id: gram.id, gram: { message: 'wahoo' } }
-      expect(response).to have_http_status(forbidden)
+      expect(response).to have_http_status(:forbidden)
     end
 
     it "shouldn't let unauthenticated users update a gram" do
@@ -90,9 +90,8 @@ RSpec.describe GramsController, type: :controller do
     end
 
     it "should successfully show the edit form if the gram is found" do
-      sign_in gram.user
-
       gram = FactoryBot.create(:gram)
+      sign_in gram.user
       get :edit, params: { id: gram.id }
       expect(response).to have_http_status(:success)
     end
