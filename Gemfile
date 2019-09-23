@@ -39,7 +39,7 @@ gem 'jquery-rails', '~> 4.3', '>= 4.3.5'
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails', '~> 3.8', '>= 3.8.2'
+  gem 'rspec-rails', '~> 3.5'
   gem "factory_bot_rails"
 end
 
@@ -67,9 +67,11 @@ gem 'popper_js', '~> 1.14', '>= 1.14.5'
 gem 'bootstrap', '~> 4.3', '>= 4.3.1'
 gem 'simple_form'
 gem 'devise', '~> 4.7', '>= 4.7.1'
-gem 'carrierwave', '~> 2.0', '>= 2.0.1'
+gem 'carrierwave', '~> 2.0', '>= 2.0.1', '< 3.0'
 gem 'figaro', '~> 1.1', '>= 1.1.1'
 gem 'fog-aws', '~> 3.5', '>= 3.5.2'
+gem 'jquery-ui-rails'
+
 
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '~> 1.1', '>= 1.1.1'
