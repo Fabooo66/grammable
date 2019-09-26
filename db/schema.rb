@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_12_175130) do
+ActiveRecord::Schema.define(version: 2019_09_26_035914) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,8 +29,9 @@ ActiveRecord::Schema.define(version: 2019_09_12_175130) do
     t.text "message"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "user_id"
     t.string "picture"
+    t.integer "user_id"
+    t.string "image"
     t.index ["user_id"], name: "index_grams_on_user_id"
   end
 
